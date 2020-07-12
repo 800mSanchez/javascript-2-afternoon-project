@@ -71,8 +71,8 @@ last(names, function(lastName){
 */
 
 //Code Here
-function multiply(num1,num2,callback){
-  callback(num1 * num2)
+function multiply(four, three, callback){
+  callback(four * three)
 }
 // Do not edit the code below.
 multiply(4, 3, function(answer){
@@ -92,9 +92,11 @@ multiply(4, 3, function(answer){
 */
 
 //Code Here 
-function contains(names, "Colt", callback){
-  if(names === "Colt"){
-    callback()
+function contains(names, array, callback){
+  if(array === 'Colt'){
+    return callback(true)
+  } else {
+    return callback(false)
   }
 }
 // Do not edit the code below.
@@ -117,7 +119,16 @@ contains(names, 'Colt', function(result){
 */
 
 //Code Here
-
+function uniq(array, taco){
+  for(let i = 0; i < array.length; i++){
+    for(let j = array.length -1; j >= 0; j--){
+      if(array[i] === array[j] && i !== j){
+        array.splice(j,1)
+      }
+    }
+  }
+  taco(array)
+}
 // Do not edit the code below.
 uniq(names, function(uniqArr){
   console.log('The new names array with all the duplicate items removed is ', uniqArr);
@@ -134,7 +145,11 @@ uniq(names, function(uniqArr){
 */
 
 //Code Here 
-
+function each(names, callback){
+  for (i = 0; i <names.length; i++){
+    callback(names[i,i])
+  }
+}
 // Do not edit the code below.
 each(names, function(item, indice){
   console.log('The item in the ' + indice + ' position is ' + item)
@@ -151,7 +166,13 @@ each(names, function(item, indice){
 */
 
 // Code here
-
+function getUserById(users,id,cb){
+  for(let i=0; i<users.length;i++){
+  if( users[i].id == id ){
+  cb(users[i])
+  }
+  }
+  }
 // Do not edit the code below.
 var users = [
   {
